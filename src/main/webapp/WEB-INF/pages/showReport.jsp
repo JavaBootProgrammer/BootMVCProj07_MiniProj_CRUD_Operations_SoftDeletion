@@ -12,6 +12,7 @@
 				<th>Employee name</th>
 				<th>Job</th>
 				<th>Salary</th>
+				<th>Status</th>
 				<th>Edit</th>
 				<th>Delete</th>
 			</tr>
@@ -22,6 +23,7 @@
 					<td>${emp.employeeName}</td>
 					<td>${emp.job}</td>
 					<td>${emp.salary}</td>
+					<td>${emp.status}</td>
 
 					<td><a href="edit?employeeNo=${emp.employeeNo}"> <img
 							src="images/edit.png" width="10px" height="10px">Edit

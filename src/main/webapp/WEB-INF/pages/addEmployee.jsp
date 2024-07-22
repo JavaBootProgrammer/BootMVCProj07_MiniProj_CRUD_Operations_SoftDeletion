@@ -25,6 +25,10 @@
 			<td><form:input path="dept" /></td>
 		</tr>
 		<tr>
+			<td>Employee status
+			<td><form:input path="status" /></td>
+		</tr>
+		<tr>
 			<td><input type="submit" value="register"></td>
 			<td><input type="submit" value="cancel"></td>
 		</tr>
