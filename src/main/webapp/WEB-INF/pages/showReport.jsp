@@ -19,18 +19,18 @@
 
 			<core:forEach var="emp" items="${employees}">
 				<tr style="color: red">
-					<td>${emp.employeeNo}</td>
+					<td>${emp.no}</td>
 					<td>${emp.employeeName}</td>
 					<td>${emp.job}</td>
 					<td>${emp.salary}</td>
 					<td>${emp.status}</td>
 
-					<td><a href="edit?employeeNo=${emp.employeeNo}"> <img
+					<td><a href="edit?no=${emp.no}"> <img
 							src="images/edit.png" width="10px" height="10px">Edit
 					</a>&nbsp;&nbsp;&nbsp;&nbsp;</td>
 
 
-					<td><a href="delete?employeeNo=${emp.employeeNo}"> <img
+					<td><a href="delete?no=${emp.no}"> <img
 							src="images/delete.png" width="10px" height="10px">Delete
 					</a>&nbsp;&nbsp;&nbsp;&nbsp;</td>
 

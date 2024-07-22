@@ -11,7 +11,7 @@
 		<tr>
 
 			<td>Employee No
-			<td><form:input path="employeeNo" readonly="true" /></td>
+			<td><form:input path="no" readonly="true" /></td>
 		</tr>
 		<tr>
 

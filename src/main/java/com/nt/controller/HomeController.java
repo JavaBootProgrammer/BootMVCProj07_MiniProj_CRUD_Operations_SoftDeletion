@@ -108,32 +108,31 @@ public class HomeController {
 
 		System.out.println("HomeController.updateEmployee()");
 
-		String message = employeeServiceImp.UdpateEmployee(e)+ " has been updated";
+		String message = employeeServiceImp.UdpateEmployee(e) + " has been updated";
 		atr.addFlashAttribute("message", message);
 
 		return "redirect:reportOne";
 
 	}
-	
+
 	@GetMapping("delete")
 	public String deteleEmployeePageDisplay(@ModelAttribute("employee") Employee receivedEmployee,
-			@RequestParam Integer employeeNo)
-	{
+			@RequestParam(value = "no") Integer employeeNo) {
 		System.out.println("HomeController.deteleEmployeePageDisplay()");
-		
-		Employee foundEmployee= employeeServiceImp.findByID(employeeNo);
+
+		Employee foundEmployee = employeeServiceImp.findByID(employeeNo);
 
 		BeanUtils.copyProperties(foundEmployee, receivedEmployee);
 
 		return "deleteEmployee";
 	}
-	
+
 	@PostMapping("/delete") // display register form
 	public String deteleEmployeePageDisplay(@ModelAttribute("employee") Employee e, RedirectAttributes atr) {
 
 		System.out.println("HomeController.updateEmployee()");
 
-		String message = employeeServiceImp.deleteEmployee(e)+" has been deleted";
+		String message = employeeServiceImp.deleteEmployee(e) + " has been deleted";
 		atr.addFlashAttribute("message", message);
 
 		return "redirect:reportOne";

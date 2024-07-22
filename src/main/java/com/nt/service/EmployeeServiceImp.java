@@ -37,7 +37,7 @@ public class EmployeeServiceImp implements IEmployeeService {
 	@Override
 	public String regiterEmployee(Employee emp) {
 
-		int value = employeeRepository.save(emp).getEmployeeNo();
+		int value = employeeRepository.save(emp).getNo();
 		return value + " is inserted into database";
 	}
 
@@ -54,7 +54,7 @@ public class EmployeeServiceImp implements IEmployeeService {
 
 		System.out.println("HomeController.updateEmployee()");
 
-		Optional<Employee> empOptional = employeeRepository.findById(emp.getEmployeeNo());
+		Optional<Employee> empOptional = employeeRepository.findById(emp.getNo());
 
 		if (empOptional.isPresent()) {
 			employeeRepository.save(emp);
@@ -69,9 +69,9 @@ public class EmployeeServiceImp implements IEmployeeService {
 	public String deleteEmployee(Employee employee) {
 		System.out.println("EmployeeServiceImp.deleteEmployee()");
 		
-		employeeRepository.deleteById(employee.getEmployeeNo());
+		employeeRepository.deleteById(employee.getNo());
 		
-		return employee.getEmployeeNo()+"";
+		return employee.getNo()+"";
 	}
 
 }

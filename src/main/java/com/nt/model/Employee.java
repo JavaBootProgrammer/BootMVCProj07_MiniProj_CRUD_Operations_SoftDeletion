@@ -2,7 +2,8 @@ package com.nt.model;
 
 import java.io.Serializable;
 
-
+import org.hibernate.annotations.SQLRestriction;
+import org.hibernate.annotations.SQLDelete;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -16,19 +17,24 @@ import lombok.Data;
 @Data
 @Entity
 @Table(name = "employee_new")
+@SQLDelete(sql = "UPDATE employee_new set status = 'INACTIVE' WHERE no=?")
+@SQLRestriction("status <> 'INACTIVE'")
+
 public class Employee implements Serializable {
 
 	@Id
 	@SequenceGenerator(name = "gen1", sequenceName = "EMP_SEQ", initialValue = 5, allocationSize = 1)
 	@GeneratedValue(generator = "gen1", strategy = GenerationType.SEQUENCE)
-	private Integer employeeNo;
+	private Integer no;
 
-	public Integer getEmployeeNo() {
-		return employeeNo;
+	
+
+	public Integer getNo() {
+		return no;
 	}
 
-	public void setEmployeeNo(Integer employeeNo) {
-		this.employeeNo = employeeNo;
+	public void setNo(Integer no) {
+		this.no = no;
 	}
 
 	public String getEmployeeName() {
@@ -76,4 +82,6 @@ public class Employee implements Serializable {
 	public void setStatus(String status) {
 		this.status = status;
 	}
+
+	
 }
